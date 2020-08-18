@@ -98,6 +98,11 @@ class App extends React.Component<Props, State> {
 }
 ```
 
+## Development
+```bash
+$ npx concurrently "npm start" "cd example; npm start"
+```
+
 ## License
 
 MIT © [vxlllc-us](https://github.com/vxlllc-us)
