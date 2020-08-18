@@ -182,45 +182,6 @@ class DynamicTable extends React.Component<Props, State> {
                     Submit
                   </Button>
                 </TableCell>
-                {/*
-<TableCell
-                  className={this.props.classes.tableFooter}
-                  colSpan={this.props.columns.length}
-                >
-                  <form noValidate autoComplete={'off'}>
-                    <Grid container spacing={2}>
-                      {this.props.columns.map((column: any) => (
-                        <Grid item xs={4}>
-                          <TextField
-                            label={column.name}
-                            fullWidth
-                            InputLabelProps={{
-                              shrink: column.type === 'date'
-                            }}
-                            variant={'outlined'}
-                            margin={'dense'}
-                            size={'small'}
-                            type={column.type || 'text'}
-                            name={column.name.toLowerCase().replace(/ /g, '_')}
-                            onChange={this.onInput}
-                            placeholder={column.name}
-                          />
-                        </Grid>
-                      ))}
-                      <Grid item xs={12}>
-                        <ButtonGroup
-                          className={this.props.classes.buttonContainer}
-                        >
-                          <Button color={'secondary'}>Reset</Button>
-                          <Button color={'primary'} onClick={this.onRowAdded}>
-                            Submit
-                          </Button>
-                        </ButtonGroup>
-                      </Grid>
-                    </Grid>
-                  </form>
-                </TableCell>
-                */}
               </TableRow>
             </TableFooter>
           </Table>
