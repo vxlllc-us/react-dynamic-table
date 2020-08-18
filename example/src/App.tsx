@@ -41,6 +41,19 @@ export default class App extends React.Component<Props, State> {
     })
   }
 
+  onRowDeleted = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    index: number
+  ): void => {
+    e.preventDefault()
+
+    let rows: any[] = this.state.rows
+    rows.splice(index, 1)
+    this.setState({
+      rows
+    })
+  }
+
   onRowAdded = (e: React.MouseEvent<HTMLButtonElement>, row: any): any => {
     e.preventDefault()
 
@@ -56,6 +69,7 @@ export default class App extends React.Component<Props, State> {
           columns={this.state.columns}
           rows={this.state.rows}
           onRowAdded={this.onRowAdded}
+          onRowDeleted={this.onRowDeleted}
           title={'Operation History'}
         />
       </div>

@@ -38,6 +38,7 @@ type Props = {
   columns: any[]
   rows: any[]
   onRowAdded: (e: React.MouseEvent<HTMLButtonElement>, row: any) => any
+  onRowDeleted: (e: React.MouseEvent<HTMLButtonElement>, index: number) => any
 } & WithStyles<typeof styles>
 interface State {
   loading: boolean
@@ -61,6 +62,21 @@ class DynamicTable extends React.Component<Props, State> {
     this.setState({
       rows: this.props.rows
     })
+  }
+
+  onRowDeleted = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    index: number
+  ): void => {
+    e.preventDefault()
+
+    let rows: any[] = this.state.rows
+    rows.splice(index, 1)
+    this.setState({
+      rows
+    })
+
+    this.props.onRowDeleted(e, index)
   }
 
   onRowAdded = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -119,7 +135,12 @@ class DynamicTable extends React.Component<Props, State> {
                     return <TableCell>{row[key]}</TableCell>
                   })}
                   <TableCell>
-                    <IconButton color={'secondary'}>
+                    <IconButton
+                      color={'secondary'}
+                      onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                        this.onRowDeleted(e, index)
+                      }
+                    >
                       <DeleteIcon />
                     </IconButton>
                   </TableCell>
