@@ -34,7 +34,7 @@ const styles = () => ({
 })
 
 type Props = {
-  title: string
+  title?: string
   columns: any[]
   rows: any[]
   onRowAdded: (e: React.MouseEvent<HTMLButtonElement>, row: any) => any
@@ -104,9 +104,11 @@ class DynamicTable extends React.Component<Props, State> {
   render() {
     return (
       <React.Fragment>
-        <Typography variant={'h5'} gutterBottom>
-          {this.props.title}
-        </Typography>
+        {this.props.title && (
+          <Typography variant={'h5'} gutterBottom>
+            {this.props.title}
+          </Typography>
+        )}
         <TableContainer component={Paper}>
           <Table stickyHeader>
             <TableHead>

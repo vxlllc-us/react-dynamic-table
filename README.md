@@ -18,6 +18,7 @@ $ npm install --save react-materialui-dynamic-table
 | rows         | `any[]`                                                          | Array of Rows. Structure should match array of columns(See example for more details) | True     |
 | onRowAdded   | `(e: React.MouseEvent<HTMLButtonElement>, row: any) => any`      | Callback function. Gets executed when a row gets added to table.                     | True     |
 | onRowDeleted | `(e: React.MouseEvent<HTMLButtonElement>, index: number) => any` | Callback function. Gets executed when a row gets deleted from the table.             | True     |
+| title        | `string`                                                         | Table Title                                                                          | False    |
 
 ## Example
 
@@ -99,6 +100,7 @@ class App extends React.Component<Props, State> {
 ```
 
 ## Development
+
 ```bash
 $ npx concurrently "npm start" "cd example; npm start"
 ```
