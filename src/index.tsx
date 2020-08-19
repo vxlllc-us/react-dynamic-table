@@ -18,17 +18,9 @@ import {
 import DeleteIcon from '@material-ui/icons/Delete'
 
 const styles = () => ({
-  tableHead: {
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
-    color: '#000'
-  },
-  tableFooter: {
-    border: '1px solid grey'
-  },
+  tableHead: {},
+  tableFooter: {},
   buttonContainer: {
-    width: '100%',
-    background: 'gree',
-    minWidth: '250px',
     justifyContent: 'flex-end'
   }
 })
@@ -110,7 +102,7 @@ class DynamicTable extends React.Component<Props, State> {
           </Typography>
         )}
         <TableContainer component={Paper}>
-          <Table stickyHeader>
+          <Table>
             <TableHead>
               <TableRow>
                 <TableCell className={this.props.classes.tableHead}>
